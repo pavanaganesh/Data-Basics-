@@ -1,6 +1,6 @@
 %% Data Basics
 % BY pavana Mysore Ganesh
-% Note: I was not able to add the path of bmes.dowloadurl and bmes.publish
+
 
 t = readtable('Immunotherapy.xlsx');
 % Changing the name of attributes
@@ -14,8 +14,9 @@ m = table(attributes(1:end-1)',correlation');
 name = {'attributes','correlation'};
 m.Properties.VariableNames = name;
 disp(m)
-%% t-test and find statistically significant attribute
 
+
+%% t-test and find statistically significant attribute
 testpos = t{:,'result'} == 1;
 testneg = t{:,'result'} == 0;
 for i = 1:numel(attributes)-1
